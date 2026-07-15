@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F4F1EA" />
+    <link
+      rel="stylesheet"
+      href="https://db.onlinewebfonts.com/c/bb5de19d87c09a95216dc6ccd96e37c6?family=Nimbus+Sans+TW01"
+    />
+    <title>FlowUp | 막연한 아이디어를 프로젝트로</title>
+    <script>
+      (() => {
+        const redirect = sessionStorage.getItem("flowup:redirect");
+        if (!redirect) return;
+        sessionStorage.removeItem("flowup:redirect");
+        const target = new URL(redirect);
+        if (target.origin === window.location.origin) {
+          window.history.replaceState(null, "", `${target.pathname}${target.search}${target.hash}`);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
